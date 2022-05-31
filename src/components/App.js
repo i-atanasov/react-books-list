@@ -16,9 +16,9 @@ const App = () => {
             <Header />
                 <Routes>    
                     <Route path='/' exact element={<BooksList />} />
-                    <Route path='/add' exact element={<BookAdd />} />
-                    <Route path='/edit' exact element={<BookEdit />} />
-                    <Route path='/delete' exact element={<BookDelete />} />
+                    <Route path='/books/add' exact element={<BookAdd />} />
+                    <Route path='/books/edit' exact element={<BookEdit />} />
+                    <Route path='/books/delete' exact element={<BookDelete />} />
                 </Routes>
         </Router>
     </div>
