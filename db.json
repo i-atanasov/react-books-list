@@ -1,8 +1,9 @@
 {
   "books": [
       {
-          "title": "Hitchhiker's Guide To The Universe",
+          "title": "The Hitchhiker's Guide to the Galaxy",
           "author": "Douglas Adams",
+          "coverurl": "https://upload.wikimedia.org/wikipedia/en/b/bd/H2G2_UK_front_cover.jpg",
           "published": "1980",
           "added": "21/5/2022",
           "read": true,
@@ -11,14 +12,37 @@
           "id": 1
       },
       {
-          "title": "Hitchhiker's Guide To The Universe",
-          "author": "Douglas Adams",
-          "published": "1980",
-          "added": "21/5/2022",
+          "title": "The Lord of the Rings",
+          "author": "J.R.R. Tolkien",
+          "coverurl": "https://upload.wikimedia.org/wikipedia/en/thumb/e/e9/First_Single_Volume_Edition_of_The_Lord_of_the_Rings.gif/220px-First_Single_Volume_Edition_of_The_Lord_of_the_Rings.gif",
+          "published": "1967",
+          "added": "22/5/2022",
           "read": true,
           "notes": " ",
           "userId": 37742847247,
           "id": 2
-      }
+      },
+      {
+        "title": "The Hitchhiker's Guide to the Galaxy",
+        "author": "Douglas Adams",
+        "coverurl": "https://upload.wikimedia.org/wikipedia/en/b/bd/H2G2_UK_front_cover.jpg",
+        "published": "1980",
+        "added": "21/5/2022",
+        "read": true,
+        "notes": " ",
+        "userId": 37742847247,
+        "id": 1
+    },
+      {
+        "title": "The Lord of the Rings",
+        "author": "J.R.R. Tolkien",
+        "coverurl": "https://upload.wikimedia.org/wikipedia/en/thumb/e/e9/First_Single_Volume_Edition_of_The_Lord_of_the_Rings.gif/220px-First_Single_Volume_Edition_of_The_Lord_of_the_Rings.gif",
+        "published": "1967",
+        "added": "22/5/2022",
+        "read": true,
+        "notes": " ",
+        "userId": 37742847247,
+        "id": 2
+    }
   ]
 }
