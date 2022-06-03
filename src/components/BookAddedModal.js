@@ -10,7 +10,7 @@ class BookAddedModal extends React.Component {
         return (
             <React.Fragment>
                 <Link className="ui primary button" to='/books/add'>Add Another</Link>
-                <Link className="ui button" to='/'>Cancel</Link>
+                <Link className="ui button" to='/'>View books</Link>
             </React.Fragment>
         );
     }

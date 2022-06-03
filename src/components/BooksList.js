@@ -14,12 +14,20 @@ class BooksList extends React.Component {
         fetchBooks();
     }
 
+    
     render() {
         const books = this.state.books.map((currentBook) => {
+            const renderImage = () => {
+                return currentBook.coverurl ?
+                            <img className="ui image" alt={currentBook.title} src={currentBook.coverurl} style={{ width: "80px" }}/> :
+                            <img className="ui image" alt={currentBook.title} src="https://storage.googleapis.com/webdesignledger.pub.network/LaT/edd/2016/02/old-book-cover-texture-15.jpg" style={{ width: "80px" }}/>
+
+            }
+            
             return (
                 <div key={currentBook.id} className="ui container list raised segment">
                     <div className="item">
-                        <img className="ui image" alt={currentBook.title} src={currentBook.coverurl} style={{ width: '80px' }}/>
+                        {renderImage()}
                         <div className="content">
                             <div className="header">
                                 Title {currentBook.title}:
