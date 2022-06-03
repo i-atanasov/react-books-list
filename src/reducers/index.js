@@ -1,7 +1,5 @@
 import { combineReducers } from "redux";
 
-import { signIn, signOut } from "../actions";
-
 const INITIAL_STATE = {
     isSignedIn: null,
     userId: null
@@ -18,7 +16,21 @@ const authReducer = (state = INITIAL_STATE, action) => {
         }
     };
 
+const bookReducer = (state = {}, action) => {
+    switch (action.type) {
+        case "ADD_BOOK":
+            return { ...state, [action.payload.id]: action.payload };
+        case "FETCH_BOOK":
+            return { ...state, [action.payload.id]: action.payload };
+        case "FETCH_BOOKS":
+            return { ...state, [action.payload.id]: action.payload };
+        default: 
+            return state;
+    }
+}
 
     export default combineReducers({
-        auth: authReducer
+        auth: authReducer,
+        books: bookReducer
       });
+

@@ -19,7 +19,7 @@ class BooksList extends React.Component {
             return (
                 <div key={currentBook.id} className="ui container list raised segment">
                     <div className="item">
-                        <img className="ui image" src={currentBook.coverurl} style={{ width: '80px' }}/>
+                        <img className="ui image" alt={currentBook.title} src={currentBook.coverurl} style={{ width: '80px' }}/>
                         <div className="content">
                             <div className="header">
                                 Title {currentBook.title}:
