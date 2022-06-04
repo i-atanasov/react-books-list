@@ -7,6 +7,7 @@ import BookAdd from './BookAdd';
 import BookEdit from './BookEdit';
 import BookDelete from './BookDelete';
 import BookAddedModal from './BookAddedModal';
+import MyBooksList from './MyBooksList';
 import history from '../history';
 
 
@@ -15,8 +16,9 @@ const App = () => {
     <div>
         <Router history={history}>
             <Header />
-                <Routes>    
-                    <Route path='/' element={<BooksList />} />
+                <Routes>
+                    <Route path='/' element={<MyBooksList />} />   
+                    <Route path='/books/all' element={<BooksList />} />
                     <Route path='/books/add' element={<BookAdd />} />
                     <Route path='/books/edit' element={<BookEdit />} />
                     <Route path='/books/delete' element={<BookDelete />} />
