@@ -8,7 +8,8 @@
       "added": "21/5/2022",
       "read": true,
       "notes": " ",
-      "userId": 37742847247,
+      "userId": "104842304746407078462",
+      "dateAdded": "6/3/2022",
       "id": 1
     },
     {
@@ -45,17 +46,40 @@
       "id": 4
     },
     {
+      "read": false,
       "title": "An old book",
       "author": "Unknown",
       "userId": "104842304746407078462",
       "id": 5
     },
     {
+      "read": true,
       "title": "How to Lie with Statistics",
       "author": "Darrell Huff",
       "coverurl": "https://upload.wikimedia.org/wikipedia/en/thumb/2/2a/How_to_Lie_with_Statistics.jpg/220px-How_to_Lie_with_Statistics.jpg",
       "userId": "104842304746407078462",
+      "dateAdded": "6/3/2022",
       "id": 6
+    },
+    {
+      "read": true,
+      "title": "Adventures of Huckleberry Finn",
+      "author": "Mark Twain",
+      "coverurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Huckleberry_Finn_book.JPG/220px-Huckleberry_Finn_book.JPG",
+      "published": "1884",
+      "notes": "Adventures of Huckleberry Finn or as it is known in more recent editions, The Adventures of Huckleberry Finn, is a novel by American author Mark Twain, which was first published in the United Kingdom in December 1884 and in the United States in February 1885.\n",
+      "userId": "104842304746407078462",
+      "dateAdded": "6/3/2022",
+      "id": 7
+    },
+    {
+      "read": true,
+      "title": "tet",
+      "author": "teekfjak",
+      "userId": "104842304746407078462",
+      "userName": "Ivaylo Atanasov",
+      "dateAdded": "6/3/2022",
+      "id": 8
     }
   ]
 }

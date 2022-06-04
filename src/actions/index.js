@@ -2,10 +2,10 @@ import { formValues } from "react-final-form";
 import history from '../history';
 import books from '../api/books';
 
-export const signIn = (userId) => {
+export const signIn = (userId, userName) => {
     return {
         type: "SIGN_IN",
-        payload: userId
+        payload:  [userId, userName]
     };
 };
 
@@ -16,8 +16,10 @@ export const signOut = () => {
 };
 
 export const addBook = formValues => async (dispatch, getState) => {
-    const { userId } = getState().auth;
-    const res = await books.post('/books', { ...formValues, userId });
+    const { userId, userName } = getState().auth;
+    const dateAdded = new Date().toLocaleDateString("en-US");
+
+    const res = await books.post('/books', { ...formValues, userId, userName, dateAdded });
 
     dispatch({ type: "ADD_BOOK", payload: res.data });
 };

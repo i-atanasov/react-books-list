@@ -22,6 +22,15 @@ const BookForm = (props) => {
       </div>
     );
   };
+
+  const renderTextArea = ({ input, label }) => {
+    return (
+      <div className="field">
+        <label>{label}</label>
+        <textarea {...input} />
+      </div>
+    );
+  };
  
   const onSubmit = (formValues) => {
     props.onSubmit(formValues);
@@ -46,14 +55,32 @@ const BookForm = (props) => {
       }}
       render={({ handleSubmit }) => (
         <form onSubmit={handleSubmit} className="ui form error">
-          <Field name="title" component={renderInput} label="Enter Title*" />
-          <Field
-            name="author"
-            component={renderInput}
-            label="Enter Author*"
-          />
-            <Field name="coverurl" component={renderInput} label="Enter URL for cover image" />
-          <button className="ui button primary">Submit</button>
+            <div className="ui container">
+                <h3>{props.title}</h3>
+                <Field name="title" component={renderInput} label="Enter Title*:" />
+                <Field
+                    name="author"
+                    component={renderInput}
+                    label="Enter Author*:"
+                />
+                <Field name="coverurl" component={renderInput} label="Enter URL for cover image:" />
+                <Field name="published" component={renderInput} label="Year of publication:" />
+                <div className="ui toggle checkbox">
+                    <Field
+                        name="read"
+                        component="input"
+                        type="checkbox"
+                        defaultValue={false}
+                        className=""
+                    />
+                    <label className="label" htmlFor="read">
+                        Read
+                    </label> 
+                </div>
+                <Field name="notes" component={renderTextArea} label="Notes:" />
+
+            <button className="ui button primary">Submit</button>
+          </div>
         </form>
       )}
     />

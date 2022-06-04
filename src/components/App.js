@@ -22,6 +22,8 @@ const App = () => {
                     <Route path='/books/delete' element={<BookDelete />} />
                     <Route path='/book/added' element={<BookAddedModal />} />
                 </Routes>
+                <hr style={{ "marginTop": "20px" }}></hr>
+            <footer><br /></footer>
         </Router>
     </div>
     );

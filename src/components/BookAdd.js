@@ -18,8 +18,7 @@ const BookAdd = (props) => {
 
     return ( 
         <div>
-            <h3>Add a book</h3>
-            <BookForm onSubmit={onSubmit} />
+            <BookForm title="Add book:" onSubmit={onSubmit} />
         </div>
     );
 
