@@ -1,16 +1,15 @@
 import React from "react";
 import { connect } from 'react-redux';
-import { useNavigate, useLocation, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
+import _ from 'lodash';
 
 import { addBook } from '../actions';
 import BookForm from './BookForm';
 
 const BookAdd = (props) => {
-
-    const {id} = useParams()
+    const { id } = useParams()
     const nav = useNavigate();
-
     const bookData = useSelector((state) => state.books[id]);
 
     const onSubmit = (formValues) => {
@@ -23,7 +22,12 @@ const BookAdd = (props) => {
 
     return ( 
         <div>
-            <BookForm title="Add book:" initialValues={bookData} onSubmit={onSubmit} />
+            <BookForm 
+                title="Add book:" 
+                initialValues={_.pick(bookData, "title", "author", "coverurl", "published")} 
+                onSubmit={onSubmit} 
+
+            />
         </div>
     );
 

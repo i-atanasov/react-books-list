@@ -47,14 +47,6 @@
       "id": 4
     },
     {
-      "read": false,
-      "title": "An old book",
-      "author": "Unknown",
-      "userId": "104842304746407078462",
-      "userName": "Ivaylo Atanasov",
-      "id": 5
-    },
-    {
       "read": true,
       "title": "How to Lie with Statistics",
       "author": "Darrell Huff",
@@ -62,38 +54,30 @@
       "userId": "104842304746407078462",
       "userName": "Ivaylo Atanasov",
       "dateAdded": "6/3/2022",
-      "id": 6
+      "id": 6,
+      "published": "1951"
     },
     {
+      "title": "The Lord of the Rings",
+      "author": "J.R.R. Tolkien",
+      "coverurl": "https://upload.wikimedia.org/wikipedia/en/thumb/e/e9/First_Single_Volume_Edition_of_The_Lord_of_the_Rings.gif/220px-First_Single_Volume_Edition_of_The_Lord_of_the_Rings.gif",
+      "published": "1967",
       "read": true,
-      "title": "Adventures of Huckleberry Finn",
-      "author": "Mark Twain",
-      "coverurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Huckleberry_Finn_book.JPG/220px-Huckleberry_Finn_book.JPG",
-      "published": "1884",
-      "notes": "Adventures of Huckleberry Finn or as it is known in more recent editions, The Adventures of Huckleberry Finn, is a novel by American author Mark Twain, which was first published in the United Kingdom in December 1884 and in the United States in February 1885.\n",
-      "userId": "104842304746407078462",
-      "dateAdded": "6/3/2022",
-      "userName": "Ivaylo Atanasov",
-      "id": 7
-    },
-    {
-      "read": true,
-      "title": "tet",
-      "author": "teekfjak",
-      "userId": "104842304746407078462",
-      "userName": "Ivaylo Atanasov",
-      "dateAdded": "6/3/2022",
-      "id": 8
-    },
-    {
-      "read": true,
-      "title": "sl;adk;lask",
-      "author": "slkasda.s",
-      "coverurl": "ksadlsl",
       "userId": "104842304746407078462",
       "userName": "Ivaylo Atanasov",
       "dateAdded": "6/7/2022",
-      "id": 9
+      "id": 10
+    },
+    {
+      "read": false,
+      "title": "История на легендарните земи и места",
+      "author": "Умберто Еко",
+      "coverurl": "https://iztok-zapad.eu/image/cache/catalog/books/picture_1567-325x500.jpg",
+      "published": "2015",
+      "userId": "104842304746407078462",
+      "userName": "Ivaylo Atanasov",
+      "dateAdded": "6/7/2022",
+      "id": 11
     }
   ]
 }

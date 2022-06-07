@@ -4,25 +4,24 @@ import { Link } from "react-router-dom";
 import Modal from "./Modal";
 
 
-class BookAddedModal extends React.Component {
+class BookDeletedModal extends React.Component {
    
     renderActions() {
         return (
             <React.Fragment>
-                <Link className="ui primary button" to='/books/add'>Add Another</Link>
-                <Link className="ui button" to='/books/my'>View My books</Link>
+                <Link className="ui primary button" to='/books/my'>Ok</Link>
             </React.Fragment>
         );
     }
 
     renderContent() {
-        return 'Book added successfully, choose what to do next:';
+        return 'Book deleted successfully, return to My Books:';
     }
     
     render() {
         return ( 
                 <Modal 
-                    title='Book added'
+                    title='Book deleted'
                     content={this.renderContent()}
                     actions={this.renderActions()}
                 />
@@ -30,4 +29,4 @@ class BookAddedModal extends React.Component {
         }
 }
 
-export default BookAddedModal;
+export default BookDeletedModal;

@@ -1,5 +1,4 @@
 import { formValues } from "react-final-form";
-import history from '../history';
 import books from '../api/books';
 
 export const signIn = (userId, userName) => {
@@ -36,3 +35,15 @@ export const fetchBook = (id) => async dispatch => {
 
     dispatch({ type: "FETCH_BOOK", payload: res.data });
 };
+
+export const editBook = (id, formValues) => async dispatch => {
+    const res = await books.patch(`/books/${id}`, formValues)
+
+    dispatch({ type: "EDIT_BOOK", payload: res.data })
+}
+
+export const deleteBook = id => async dispatch => {
+    await books.delete(`/books/${id}`)
+    
+    dispatch({ type: "DELETE_BOOK", payload: id })
+}

@@ -9,15 +9,15 @@ class BooksList extends React.Component {
         this.props.fetchBooks();
     }
 
-    renderAdminButtons(book) {
+    renderAdminButtons(currentBook) {
 
-        if (book.userId === this.props.currentUserId && book.userId) {
+        if (currentBook.userId === this.props.currentUserId && currentBook.userId) {
             return (
                 <div className="right floated content" style={{ "marginTop": "10px" }}>
-                    <Link className="ui inverted secondary button" to={`/books/edit/${book.id}`}>
+                    <Link className="ui inverted secondary button" to={`/books/edit/${currentBook.id}`}>
                         <i className="ui edit icon"></i>Edit
                     </Link>
-                    <Link className="ui inverted red button" to={`/books/delete/${book.id}`}>
+                    <Link className="ui inverted red button" to={`/books/delete/${currentBook.id}`}>
                         <i className="ui delete icon"></i>Delete
                         </Link>
                 </div>
@@ -26,7 +26,7 @@ class BooksList extends React.Component {
             
             return (
                 <div className="right floated button" style={{ "marginTop": "10px" }}>
-                    <Link className="ui inverted green button" to={`/books/add/${book.id}`}>
+                    <Link className="ui inverted green button" to={`/books/add/${currentBook.id}`}>
                         <i className="ui add icon"></i>Add
                     </Link>
                     <p></p>
@@ -46,7 +46,7 @@ class BooksList extends React.Component {
         return this.props.books.map(currentBook => {
             let read = '';    
             if (currentBook.userId === this.props.currentUserId) {
-                read = currentBook.read ? 'lightgreen' : '#FFFF99';
+                read = currentBook.read ? 'lightgreen' : 'tomato';
             } else {
                 read = '#99CCFF';
             }
