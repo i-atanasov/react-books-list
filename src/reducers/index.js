@@ -1,4 +1,5 @@
 import { combineReducers } from "redux";
+import _ from 'lodash';
 
 const INITIAL_STATE = {
     isSignedIn: null,
@@ -22,8 +23,12 @@ const bookReducer = (state = {}, action) => {
             return { ...state, [action.payload.id]: action.payload };
         case "FETCH_BOOK":
             return { ...state, [action.payload.id]: action.payload };
-        case "FETCH_BOOKS":
+        case "EDIT_BOOK":
             return { ...state, [action.payload.id]: action.payload };
+        case "FETCH_BOOKS":
+            return { ...state, ..._.mapKeys(action.payload, 'id') };
+        case "DELETE_BOOK":
+            return _.omit(state, action.payload);
         default: 
             return state;
     }

@@ -20,6 +20,7 @@ const App = () => {
                     <Route path='/' element={<MyBooksList />} />   
                     <Route path='/books/all' element={<BooksList />} />
                     <Route path='/books/add' element={<BookAdd />} />
+                    <Route path="/books/add/:id" element={<BookAdd />} />
                     <Route path='/books/edit' element={<BookEdit />} />
                     <Route path='/books/delete' element={<BookDelete />} />
                     <Route path='/book/added' element={<BookAddedModal />} />

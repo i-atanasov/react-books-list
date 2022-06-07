@@ -9,6 +9,7 @@
       "read": true,
       "notes": " ",
       "userId": "104842304746407078462",
+      "userName": "Ivaylo Atanasov",
       "dateAdded": "6/3/2022",
       "id": 1
     },
@@ -50,6 +51,7 @@
       "title": "An old book",
       "author": "Unknown",
       "userId": "104842304746407078462",
+      "userName": "Ivaylo Atanasov",
       "id": 5
     },
     {
@@ -58,6 +60,7 @@
       "author": "Darrell Huff",
       "coverurl": "https://upload.wikimedia.org/wikipedia/en/thumb/2/2a/How_to_Lie_with_Statistics.jpg/220px-How_to_Lie_with_Statistics.jpg",
       "userId": "104842304746407078462",
+      "userName": "Ivaylo Atanasov",
       "dateAdded": "6/3/2022",
       "id": 6
     },
@@ -70,6 +73,7 @@
       "notes": "Adventures of Huckleberry Finn or as it is known in more recent editions, The Adventures of Huckleberry Finn, is a novel by American author Mark Twain, which was first published in the United Kingdom in December 1884 and in the United States in February 1885.\n",
       "userId": "104842304746407078462",
       "dateAdded": "6/3/2022",
+      "userName": "Ivaylo Atanasov",
       "id": 7
     },
     {
@@ -80,6 +84,16 @@
       "userName": "Ivaylo Atanasov",
       "dateAdded": "6/3/2022",
       "id": 8
+    },
+    {
+      "read": true,
+      "title": "sl;adk;lask",
+      "author": "slkasda.s",
+      "coverurl": "ksadlsl",
+      "userId": "104842304746407078462",
+      "userName": "Ivaylo Atanasov",
+      "dateAdded": "6/7/2022",
+      "id": 9
     }
   ]
 }

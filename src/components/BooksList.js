@@ -2,22 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { fetchBooks } from "../actions";
-import books from "../api/books";
 
 class BooksList extends React.Component {
-    state = { books: [] };
 
     componentDidMount() {
-        const fetchBooks = async () => {
-            const res = await books.get('/books');
-            this.setState({ books: res.data });
-
-        };
-
-        fetchBooks();
+        this.props.fetchBooks();
     }
 
     renderAdminButtons(book) {
+
         if (book.userId === this.props.currentUserId && book.userId) {
             return (
                 <div className="right floated content" style={{ "marginTop": "10px" }}>
@@ -30,6 +23,7 @@ class BooksList extends React.Component {
                 </div>
             );
         } else {
+            
             return (
                 <div className="right floated button" style={{ "marginTop": "10px" }}>
                     <Link className="ui inverted green button" to={`/books/add/${book.id}`}>
@@ -42,27 +36,25 @@ class BooksList extends React.Component {
         }
     }
 
-    render() {
-        const books = this.state.books.map((currentBook) => {
-            const renderImage = () => {
-                return currentBook.coverurl ?
-                            <img className="ui image" alt={currentBook.title} src={currentBook.coverurl} style={{ width: "80px" }}/> :
-                            <img className="ui image" alt={currentBook.title} src="https://storage.googleapis.com/webdesignledger.pub.network/LaT/edd/2016/02/old-book-cover-texture-15.jpg" style={{ width: "80px" }}/>
+    renderImage = (currentBook) => {
+        return currentBook.coverurl ?
+                    <img className="ui image" alt={currentBook.title} src={currentBook.coverurl} style={{ width: "80px" }}/> :
+                    <img className="ui image" alt={currentBook.title} src="https://storage.googleapis.com/webdesignledger.pub.network/LaT/edd/2016/02/old-book-cover-texture-15.jpg" style={{ width: "80px" }}/>
+    }
 
-            }
-
-        let read = '';    
+    renderList() {
+        return this.props.books.map(currentBook => {
+            let read = '';    
             if (currentBook.userId === this.props.currentUserId) {
                 read = currentBook.read ? 'lightgreen' : '#FFFF99';
             } else {
                 read = '#99CCFF';
             }
-
             return (
                 <div key={currentBook.id} className="ui relaxed container raised list segment" style={{ "borderRight": `5px solid ${read}` }}>
                     <div className="item">
                         {this.renderAdminButtons(currentBook)}
-                        {renderImage()}
+                        {this.renderImage(currentBook)}
                         <div className="content">
                             <div className="header">
                                 {currentBook.title}
@@ -77,14 +69,22 @@ class BooksList extends React.Component {
                 </div>
             );
         });
-
-        return <div>{books}</div>
+    }
+    
+    render() {
+        return (
+            <div>
+                {this.renderList()}
+            </div>
+        )
     }
 };
 
 const mapStateToProps = (state) => {
     return { 
-        currentUserId: state.auth.userId, 
+        isSignedIn: state.auth.isSignedIn,
+        currentUserId: state.auth.userId,
+        books: Object.values(state.books)
     };
 };
 
