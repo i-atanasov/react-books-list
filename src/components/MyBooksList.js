@@ -2,19 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { fetchBooks } from "../actions";
-import books from "../api/books";
 
 class MyBooksList extends React.Component {
-    state = { books: [] };
 
     componentDidMount() {
-        const fetchBooks = async () => {
-            const res = await books.get('/books');
-            this.setState({ books: res.data });
-
-        };
-
-        fetchBooks();
+        this.props.fetchBooks();
     }
 
     renderAdminButtons(book) {
@@ -33,7 +25,7 @@ class MyBooksList extends React.Component {
     }
 
     render() {
-        const books = this.state.books.map((currentBook) => {
+        const books = this.props.books.map((currentBook) => {
             if (currentBook.userId === this.props.currentUserId && currentBook.userId) {
             
                     const renderImage = () => {
@@ -51,24 +43,26 @@ class MyBooksList extends React.Component {
                     }
 
                     return (
-                        <div key={currentBook.id} className="ui relaxed container raised list segment" style={{ "borderRight": `5px solid ${read}` }}>
-                            <div className="item">
-                                {this.renderAdminButtons(currentBook)}
-                                {renderImage()}
-                                <div className="content">
-                                    <div className="header">
-                                        {currentBook.title}
-                                    </div> 
-                                    <div className="description">
-                                        By {currentBook.author}  <br/>
-                                        Added on {currentBook.dateAdded} by {currentBook.userName}<br/>
-                                        First published: {currentBook.published} <br/>
+                            <div key={currentBook.id} className="ui relaxed container raised list segment" style={{ "borderRight": `5px solid ${read}` }}>
+                                <div className="item">
+                                    {this.renderAdminButtons(currentBook)}
+                                    {renderImage()}
+                                    <div className="content">
+                                        <div className="header">
+                                            {currentBook.title}
+                                        </div> 
+                                        <div className="description">
+                                            By {currentBook.author}  <br/>
+                                            Added on {currentBook.dateAdded} by {currentBook.userName}<br/>
+                                            First published: {currentBook.published} <br/>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
                     );
-                    }        
+            }
+
+            
         });
 
         return <div>{books}</div>
@@ -77,7 +71,9 @@ class MyBooksList extends React.Component {
 
 const mapStateToProps = (state) => {
     return { 
-        currentUserId: state.auth.userId, 
+        isSignedIn: state.auth.isSignedIn,
+        currentUserId: state.auth.userId,
+        books: Object.values(state.books)
     };
 };
 
