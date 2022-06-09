@@ -14,6 +14,16 @@ export const signOut = () => {
     };
 };
 
+export const searchBooks = searchTerm => async (dispatch) => {
+    const res = await books.get(`/books?q=${searchTerm}`);
+
+    dispatch({ type: "SEARCH_BOOKS", payload: res.data })
+}
+
+export const resetSearch = (search) => async (dispatch) => {
+    dispatch({ type: "SEARCH_RESET", search })
+}
+
 export const addBook = formValues => async (dispatch, getState) => {
     const { userId, userName } = getState().auth;
     const dateAdded = new Date().toLocaleDateString("en-US");

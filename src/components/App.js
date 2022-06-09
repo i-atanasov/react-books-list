@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import Header from './Header';
+import BookSearch from './BookSearch';
 import BooksList from './BooksList';
 import BookAdd from './BookAdd';
 import BookEdit from './BookEdit';
@@ -24,6 +25,7 @@ const App = () => {
                     <Route path='/books/delete/:id' element={<BookDelete />} />
                     <Route path='/book/added' element={<BookAddedModal />} />
                     <Route path='/book/deleted' element={<BookDeletedModal />} />
+                    <Route path='/book/search' element={<BookSearch />} />
                 </Routes>
                 <hr style={{ "marginTop": "20px" }}></hr>
             <footer><br /></footer>

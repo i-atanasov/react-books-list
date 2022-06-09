@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import BookSearch from "./BookSearch";
 
 import GoogleAuth from './GoogleAuth';
 
@@ -11,6 +12,7 @@ const Header = () => {
             <Link to='/books/add' className="item">Add new</Link>
 
             <div className="right menu"> 
+                <Link to='/book/search' className="item"><i className="ui search big icon"></i></Link>
                 <GoogleAuth />
 
             </div>

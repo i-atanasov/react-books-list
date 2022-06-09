@@ -3,7 +3,8 @@ import _ from 'lodash';
 
 const INITIAL_STATE = {
     isSignedIn: null,
-    userId: null
+    userId: null,
+    search: null
 };
 
 const authReducer = (state = INITIAL_STATE, action) => {
@@ -34,8 +35,20 @@ const bookReducer = (state = {}, action) => {
     }
 }
 
+    const searchReducer = (state = {}, action) => {
+        switch (action.type) {
+            case "SEARCH_BOOKS":
+                return { ...state, ..._.mapKeys(action.payload, 'id' ) };
+            case "SEARCH_RESET":
+                return null;
+            default:
+                return state;
+        }
+    }
+
     export default combineReducers({
         auth: authReducer,
-        books: bookReducer
+        books: bookReducer,
+        search: searchReducer
       });
 
